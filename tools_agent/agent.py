@@ -49,13 +49,17 @@ class MCPConfig(BaseModel):
 
 class GraphConfigPydantic(BaseModel):
     model_name: Optional[str] = Field(
-        default="openai:gpt-4o",
+        default="google_genai:gemini-2-5-flash",
         metadata={
             "x_oap_ui_config": {
                 "type": "select",
-                "default": "openai:gpt-4o",
+                "default": "google_genai:gemini-2-5-flash",
                 "description": "The model to use in all generations",
                 "options": [
+                    {
+                        "label": "Gemini 2.5 Flash",
+                        "value": "google_genai:gemini-2-5-flash",
+                    },
                     {
                         "label": "Claude Sonnet 4",
                         "value": "anthropic:claude-sonnet-4-0",
